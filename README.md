@@ -22,7 +22,7 @@ assembling the sensor units to create a batch of 100 unique DevEUIs and register
 LoRaWAN API. They will note the output and feed it into the production system. The technicians
 can sometimes be impatient and may kill the process if it takes too long.
 
-## Requirements
+## Requirements 
 1. The application must return every DevEUI that it registers with the LoRaWAN provider
 (e.g., if the application is killed it must wait for in-flight requests to finish otherwise, we
 would have registered those DevEUIs but would not be using them)
@@ -49,7 +49,7 @@ post:
         name: deveui
     responses:
         200:
-            description: The device has bee successfully registered
+            description: The device has been successfully registered
         422:
             description: The DevEUI has already been used
 ```
@@ -70,4 +70,117 @@ func generateHexString(length int) (string, error) {
     }
     return string(b), nil
 }
+```
+
+## Run the application
+``` go build```
+```./LoraWanAPI```
+
+## Output:
+
+```
+API call number : deveui
+9 :  99707
+7 :  64C28
+5 :  AD86C
+6 :  5D4C1
+4 :  033AA
+0 :  C4D08
+10 :  E3E75
+12 :  346FF
+8 :  61185
+18 :  4F7B1
+17 :  9181F
+16 :  D6B87
+15 :  C74DD
+13 :  3F919
+2 :  5BAB1
+21 :  CA373
+22 :  39908
+25 :  014C1
+26 :  7F3CE
+14 :  5A075
+3 :  0D03D
+11 :  2E8BC
+31 :  C4A2D
+19 :  4C869
+33 :  E0CB7
+23 :  361E1
+35 :  5B714
+27 :  45414
+28 :  8514C
+29 :  11225
+38 :  BFCEB
+20 :  A8D34
+40 :  0ADB8
+1 :  FBFE8
+41 :  72ECB
+30 :  EA229
+42 :  B9FAD
+43 :  152B8
+45 :  7D437
+39 :  FAEA5
+47 :  F0201
+32 :  8AFEA
+37 :  E5CCC
+50 :  44469
+49 :  1A669
+34 :  E1443
+53 :  BEEFA
+24 :  2C82A
+^C received C-c - shutting down
+telling other goroutines to stop
+36 :  A5324
+58 goroutine ended
+59 goroutine ended
+60 goroutine ended
+61 goroutine ended
+62 goroutine ended
+63 goroutine ended
+64 goroutine ended
+65 goroutine ended
+66 goroutine ended
+67 goroutine ended
+68 goroutine ended
+69 goroutine ended
+70 goroutine ended
+71 goroutine ended
+72 goroutine ended
+73 goroutine ended
+74 goroutine ended
+75 goroutine ended
+76 goroutine ended
+77 goroutine ended
+78 goroutine ended
+79 goroutine ended
+80 goroutine ended
+81 goroutine ended
+82 goroutine ended
+83 goroutine ended
+84 goroutine ended
+85 goroutine ended
+86 goroutine ended
+87 goroutine ended
+88 goroutine ended
+89 goroutine ended
+90 goroutine ended
+91 goroutine ended
+92 goroutine ended
+93 goroutine ended
+94 goroutine ended
+95 goroutine ended
+96 goroutine ended
+97 goroutine ended
+98 goroutine ended
+99 goroutine ended
+46 :  34A7E
+48 goroutine ended
+51 goroutine ended
+52 :  0B372
+44 goroutine ended
+55 :  31CB1
+57 :  2671E
+56 :  2C9C3
+54 :  E938A
+cleanup: all running goroutines are completed.
 ```
